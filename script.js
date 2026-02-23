@@ -268,15 +268,15 @@ function deleteItem(name, type) {
 
 
 
-// function deleteMainCard(event) {
-//     const card = event.target.closest('.card');
+function deleteMainCard(event) {
+    const card = event.target.closest('.card');
 
-//     if (card) {
-//         card.remove();
-//         calculateCount();
-//         const allCardsContainer = document.getElementById("all-cards");
-//         if (allCardsContainer.children.length === 0) {
-//             nogob.classList.remove('hidden');
-//         }
-//     }
-// }
+    if (card) {
+        card.remove();
+        calculateCount();
+        const allCardsContainer = document.getElementById("all-cards");
+        if (allCardsContainer.children.length === 0) {
+            nogob.classList.remove('hidden');
+        }
+    }
+}
