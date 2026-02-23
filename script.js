@@ -184,7 +184,7 @@ function renderInterview(){
 
     selectJob.innerHTML = ''
 
-    if (interviewList.length === 0) {
+    if(interviewList.length === 0) {
         nogob.classList.remove('hidden');
     } else {
         nogob.classList.add('hidden');
@@ -227,7 +227,7 @@ function renderRejected(){
 
     if ( rejectedList.length === 0) {
         nogob.classList.remove('hidden'); 
-    } else {
+    }else {
         nogob.classList.add('hidden');
     }
     
@@ -257,6 +257,7 @@ div.innerHTML = `
 </div>
   </div>
   `
+
   selectJob.appendChild(div)
   }  
 }
@@ -267,7 +268,7 @@ function deleteItem(name, type) {
     if (type === 'interview') {
         interviewList = interviewList.filter(item => item.skil !== name);
         renderInterview();
-    } else if (type === 'rejected') {
+    } else if (type === 'rejected'){
         rejectedList = rejectedList.filter(item => item.skil !== name);
         renderRejected();
     }
@@ -276,14 +277,14 @@ function deleteItem(name, type) {
 
 
 
-function deleteMainCard(event) {
+function deleteMainCard(event){
     const card = event.target.closest('.card');
 
     if (card) {
         card.remove();
         calculateCount();
-        const allCardsContainer = document.getElementById("all-cards");
-        if (allCardsContainer.children.length === 0) {
+        const allCardsContainer =document.getElementById("all-cards");
+        if (allCardsContainer.children.length=== 0) {
             nogob.classList.remove('hidden');
         }
     }
