@@ -16,11 +16,18 @@ const allCards = document.getElementById("all-cards")
 const mainContainer =document.querySelector('main')
 const selectJob = document.getElementById("select-job")
 
-function calculateCount() {
-    total.innerText = allCards.children.length
-    jobs.innerText = allCards.children.length
-   interview.innerText = interviewList.length
-   rejected.innerText = rejectedList.length
+function calculateCount(){
+    total.innerText = allCards.children.length;
+    interview.innerText =interviewList.length;
+    rejected.innerText = rejectedList.length;
+
+    if (currentStatus === 'all-btn'||currentStatus==='all'){
+        jobs.innerText = allCards.children.length;
+    } else if (currentStatus === 'interview-btn'){
+        jobs.innerText = interviewList.length;
+    } else if (currentStatus ==='rejected-btn'){
+        jobs.innerText =rejectedList.length;
+    }
 }
 calculateCount()
 
@@ -62,6 +69,7 @@ function buttonStyle(id) {
     } else if (id === 'all-btn') {
         nogob.classList.add('hidden'); 
     }
+calculateCount();
      }
 
     
