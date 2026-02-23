@@ -255,16 +255,16 @@ div.innerHTML = `
 
 
 
-// function deleteItem(name, type) {
-//     if (type === 'interview') {
-//         interviewList = interviewList.filter(item => item.skil !== name);
-//         renderInterview();
-//     } else if (type === 'rejected') {
-//         rejectedList = rejectedList.filter(item => item.skil !== name);
-//         renderRejected();
-//     }
-//     calculateCount();
-// }
+function deleteItem(name, type) {
+    if (type === 'interview') {
+        interviewList = interviewList.filter(item => item.skil !== name);
+        renderInterview();
+    } else if (type === 'rejected') {
+        rejectedList = rejectedList.filter(item => item.skil !== name);
+        renderRejected();
+    }
+    calculateCount();
+}
 
 
 
