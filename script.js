@@ -12,9 +12,9 @@ let allBtn = document.getElementById("all-btn");
 let interviewBtn = document.getElementById("interview-btn");
 let rejectedBtn = document.getElementById("rejected-btn");
 
-// const allCards = document.getElementById("all-cards")
-// const mainContainer =document.querySelector('main')
-// const selectJob = document.getElementById("select-job")
+const allCards = document.getElementById("all-cards")
+const mainContainer =document.querySelector('main')
+const selectJob = document.getElementById("select-job")
 
 function calculateCount() {
     total.innerText = allCards.children.length
