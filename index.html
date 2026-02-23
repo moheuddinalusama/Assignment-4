@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <!-- daisyui link -->
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+
+    <link rel="shortcut icon" href="imajes/Job Application Tracker.png" type="image/x-icon">
+    <!-- tailwind css link -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <!-- font link -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    *{
+        font-family: "Work Sans", sans-serif;
+    }
+</style>
+</head>
+<body class="bg-gray-100">
+    <section class="bg-white sticky top-0 z-10 shadow  border-b-1 border-b-gray-300">
+   <header class="w-[80%] mx-auto py-8">
+    <h1 class="text-2xl font-bold  ">Job Application Tracker</h1>
+   </header>
+
+
+    <div class="w-[80%] mx-auto pb-6" >
+   
+    <div class="grid grid-cols-3 gap-8 mb-5">
+        <div class="bg-amber-200 p-4 border border-amber-500  rounded-md"> <p>Total</p> 
+            <p id="total" class="font-bold">0</p></div>
+
+
+        <div class="bg-green-200 p-4 text-green-600 border border-green-500  rounded-md"> <p>Interview</p> 
+            <p class="font-bold" id="interview">0</p></div>
+
+
+        <div class="bg-red-200 p-4 text-red-600 border border-red-500  rounded-md"> <p>Rejected</p> 
+            <p class="font-bold" id="rejected">0</p></div>
+    </div>
+   </div>
+   </section>
+
+  <section class="w-[80%] mx-auto">
+    <div class=" flex justify-between pt-5">
+<div class="py-7"> <h1 class="font-semibold text-xl ">Available Jobs</h1></div>
+<div class="py-7"><p ><span id="jobs">0</span> Jobs</p></div>
+
+    </div>
+    </section>
+   <main class="w-[80%] mx-auto pb-6">
+    <div class="flex justify-between">
+        <div class="flex gap-3">
+            <button onclick="buttonStyle('all-btn')" class="btn  btn-outline bg-blue-800 text-white" id="all-btn">All</button>
+            <button onclick="buttonStyle('interview-btn')" class="btn btn-outline" id="interview-btn">Interview</button>
+            <button onclick="buttonStyle('rejected-btn')" class="btn btn-outline" id="rejected-btn">Rejected</button>
+        </div>
+        
+    </div>
+             <section class="hidden" id="select-job">
+                
+             </section>
+
+        <section class="nogob flex justify-center items-center hidden">
+        <div class="py-28  text-center">
+            <img class="mx-auto" src="imajes/jobs.png" alt="">
+            <h1 class="font-bold">No jobs available</h1>
+            <p class="text-gray-600">Check back soon for new job opportunities</p>
+        </div>
+    </section>  
+
+
+  <div class="total-card" id="all-cards">
+                                             <!-- card-1 -->
+<!-- <div class="hover-3d"> -->
+
+<div class=" card py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">Mobile First Corp</h2>
+    <p class="skil-name text-gray-400">React Native Developer   </p>
+    <p class="salary text-gray-400">Remote • Full-time • $130,000 - $175,000</p>
+    <p class=" aplied text-black cursor-pointer font-semibold p-1 rounded-md w-1/12 text-center ">Not Applied</p>
+    <p class="detali text-gray-800 ">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+<!-- </div> -->
+
+                                            <!-- card-2 -->
+
+
+  <div class=" card py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">WebFlow Agency</h2>
+    <p class="skil-name text-gray-400">Web Designer & Developer</p>
+    <p class="salary text-gray-400">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+                                            <!-- card-3 -->
+
+
+<div class=" card  py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">DataViz Solutions</h2>
+    <p class="skil-name text-gray-400">Data Visualization Specialist</p>
+    <p class="salary text-gray-400">Boston, MA • Full-time • $125,000 - $165,000 </p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+
+                                              <!-- card-4 -->
+
+
+<div class=" card  py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">CloudFirst Inc</h2>
+    <p class="skil-name text-gray-400">Backend Developer</p>
+    <p class="salary text-gray-400">Seattle, WA • Full-time • $140,000 - $190,000 </p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+                                               <!-- card-5 -->
+
+
+
+<div class="card  py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">Innovation Labs</h2>
+    <p class="skil-name text-gray-400">UI/UX Engineer</p>
+    <p class="salary text-gray-400">Austin, TX • Full-time • $110,000 - $150,000</p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+
+                                                 <!-- card-6 -->
+
+
+<div class=" card py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">MegaCorp Solutions</h2>
+    <p class="skil-name text-gray-400">JavaScript Developer</p>
+    <p class="salary text-gray-400">New York, NY • Full-time • $130,000 - $170,00</p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+
+
+                                                <!-- card-7 -->
+
+
+
+
+<div class=" card py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">StartupXYZ</h2>
+    <p class="skil-name text-gray-400">Full Stack Engineer</p>
+    <p class="salary text-gray-400">Remote • Full-time • $120,000 - $160,000</p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+                                                   <!-- card-8 -->
+<div class=" card py-4 border border-green-400 m-3 p-1 rounded-2xl bg-gray-100 ">
+    <div class="flex justify-between">
+  <div class="card-body ">
+    <h2 class="skil text-black font-bold">TechCorp Industries</h2>
+    <p class="skil-name text-gray-400">Senior Frontend Developer</p>
+    <p class="salary text-gray-400">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+    <p class=" aplied text-black cursor-pointer font-semibold ">Not Applied</p>
+    <p class="detali text-gray-800 ">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+    <div class="card-actions ">
+      <button class="interview-btn btn btn-outline btn-accent">interview</button>
+      <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+    </div>
+  </div>
+  
+  <div class="p-4">
+    <p onclick="deleteMainCard(event)" class="cursor-pointer bg-white shadow-md rounded-md p-2 hover:text-red-600 transition-all">
+        <i class="fa-regular fa-trash-can"></i>
+    </p>
+</div>
+  </div>
+</div>
+
+
+
+
+  
+</div>
+</main>
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
