@@ -95,7 +95,7 @@ statusElement.classList.add('bg-green-500', 'text-white', 'px-3', 'py-1', 'round
 const cardContainer = event.target.closest('.py-4.border');
 
 cardContainer.classList.remove('border-l-red-600', 'border-l-[8px]');
-cardContainer.classList.add('border-l-[12px]', 'border-l-green-600', 'transition-all');
+cardContainer.classList.add('border-l-[8px]', 'border-l-green-600', 'transition-all');
 
 
 const cardInfo = {
@@ -151,7 +151,7 @@ statusElement.classList.add('bg-red-500', 'text-white', 'px-3', 'py-1', 'rounded
 const cardContainer = event.target.closest('.py-4.border');
 
 cardContainer.classList.remove('border-l-green-600', 'border-l-[8px]');
-cardContainer.classList.add('border-l-[12px]', 'border-l-red-600', 'transition-all');
+cardContainer.classList.add('border-l-[8px]', 'border-l-red-600', 'transition-all');
 
 const skilExist = rejectedList.find(i=> i.skil==cardInfo.skil)
 if(!skilExist ){
@@ -186,7 +186,7 @@ function renderInterview(){
   for(let item of interviewList){
    
 let div = document.createElement('div');
-div.className = 'py-4 m-3 p-1 rounded-2xl border border-green-400 border-l-[8px] border-l-green-600 bg-white shadow-sm';
+div.className = 'py-4 m-3 p-1 rounded-2xl border border-green-400 border-l-[8px] border-l-green-600 bg-green-100 shadow-sm';
 div.innerHTML = `
 <div class="flex justify-between">
   <div class="card-body ">
@@ -228,7 +228,7 @@ function renderRejected(){
     
 
 let div = document.createElement('div');
-div.className = 'py-4 m-3 p-1 rounded-2xl border border-red-400 border-l-[8px] border-l-red-600 bg-white shadow-sm';
+div.className = 'py-4 m-3 p-1 rounded-2xl border border-red-400 border-l-[8px] border-l-red-600  shadow-sm bg-red-100';
 div.innerHTML = `
 <div class="flex justify-between">
   <div class="card-body ">
